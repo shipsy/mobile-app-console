@@ -151,6 +151,7 @@ export default class EntryBtn extends Emitter {
     const $el = this._$el
 
     $el.on(pointerEvent('down'), this._onDragStart)
+    $el.on('click', (e) => e.stopPropagation())
 
     orientation.on('change', () => this._resetPos(true))
     window.addEventListener('resize', () => this._resetPos())

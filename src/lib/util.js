@@ -2,7 +2,6 @@ import Url from 'licia/Url'
 import contain from 'licia/contain'
 import escapeJsStr from 'licia/escapeJsStr'
 import isUndef from 'licia/isUndef'
-import last from 'licia/last'
 import map from 'licia/map'
 import memStorage from 'licia/memStorage'
 import toNum from 'licia/toNum'
@@ -67,11 +66,11 @@ export function safeStorage(type, memReplacement) {
 }
 
 export function getFileName(url) {
-  let ret = last(url.split('/'))
+  const urlObj = new Url(url)
+  let ret = urlObj.pathname
 
-  if (ret === '') {
-    url = new Url(url)
-    ret = url.hostname
+  if (ret === '' || ret === '/') {
+    ret = urlObj.hostname
   }
 
   return ret

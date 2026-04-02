@@ -302,7 +302,10 @@ export default class DevTools extends Emitter {
       c(`
       <div class="dev-tools">
         <div class="resizer"></div>
-        <div class="tab"></div>
+        <div class="tab-wrapper">
+          <div class="tab"></div>
+          <span class="icon-delete close-btn"></span>
+        </div>
         <div class="tools"></div>
         <div class="notification"></div>
         <div class="modal"></div>
@@ -318,6 +321,8 @@ export default class DevTools extends Emitter {
       height: 40,
     })
     this._tab.on('select', (id) => this.showTool(id))
+
+    this._$el.find(c('.close-btn')).on('click', () => this.hide())
   }
   _updateTabHeight = (scale) => {
     this._tab.setOption('height', 40 * scale)

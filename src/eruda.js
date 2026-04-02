@@ -277,6 +277,12 @@ export default {
   _initEntryBtn() {
     this._entryBtn = new EntryBtn(this._$el)
     this._entryBtn.on('click', () => this._devTools.toggle())
+
+    $(document).on('click', () => {
+      if (this._devTools._isShow) {
+        this._devTools.hide()
+      }
+    })
   },
   _initSettings() {
     const devTools = this._devTools

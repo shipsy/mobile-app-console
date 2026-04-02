@@ -68,11 +68,9 @@
       border-bottom: 1px solid var(--border);
       .url {
         font-size: $font-size-s;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
         width: 100%;
         display: inline-block;
+        word-break: break-all;
       }
       .icon-left {
         left: 0;
