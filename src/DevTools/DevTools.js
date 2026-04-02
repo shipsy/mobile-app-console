@@ -302,10 +302,8 @@ export default class DevTools extends Emitter {
       c(`
       <div class="dev-tools">
         <div class="resizer"></div>
-        <div class="tab-wrapper">
-          <div class="tab"></div>
-          <span class="icon-delete close-btn"></span>
-        </div>
+        <div class="tab"></div>
+        <span class="icon-delete close-btn"></span>
         <div class="tools"></div>
         <div class="notification"></div>
         <div class="modal"></div>
