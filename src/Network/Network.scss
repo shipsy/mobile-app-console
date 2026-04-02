@@ -10,6 +10,7 @@
     padding: 10px;
     border-bottom: none;
     @include control(auto);
+    min-height: 40px;
     .title {
       font-size: $font-size;
     }
