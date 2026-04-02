@@ -9,7 +9,7 @@
   .control {
     padding: 10px;
     border-bottom: none;
-    @include control();
+    @include control(auto);
     .title {
       font-size: $font-size;
     }
@@ -91,7 +91,7 @@
       .section {
         border-top: 1px solid var(--border);
         border-bottom: 1px solid var(--border);
-        margin-top: 10px;
+        margin-top: 70px;
         margin-bottom: 10px;
         h2 {
           background: var(--darker-background);
