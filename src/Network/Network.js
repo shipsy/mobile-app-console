@@ -298,9 +298,7 @@ export default class Network extends Tool {
       const request = self._requests[id]
       this._selectedRequest = request
       this._updateButtons()
-      if (this._splitMode) {
-        this._showDetail()
-      }
+      this._showDetail()
     })
 
     requestDataGrid.on('deselect', () => {

@@ -61,11 +61,12 @@
     @include absolute();
     z-index: 10;
     display: none;
-    padding-top: 40px;
     background: var(--background);
+    flex-direction: column;
     .control {
       padding: 10px 35px;
       border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
       .url {
         font-size: $font-size-s;
         width: 100%;
@@ -85,7 +86,8 @@
     }
     .http {
       @include overflow-auto(y);
-      height: 100%;
+      flex: 1;
+      overflow-y: auto;
       .section {
         border-top: 1px solid var(--border);
         border-bottom: 1px solid var(--border);

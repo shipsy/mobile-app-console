@@ -90,7 +90,7 @@ export default class Detail extends Emitter {
       ${resTxt}
     </div>`
 
-    this._$container.html(html).show()
+    this._$container.html(html).css('display', 'flex')
     this._detailData = data
   }
   hide() {
