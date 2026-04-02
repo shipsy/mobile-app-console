@@ -302,9 +302,11 @@ export default class Network extends Tool {
     })
 
     requestDataGrid.on('deselect', () => {
-      this._selectedRequest = null
-      this._updateButtons()
-      this._detail.hide()
+      if (!this._hidingDetail) {
+        this._selectedRequest = null
+        this._updateButtons()
+        this._detail.hide()
+      }
     })
 
     this._resizeSensor.addListener(
@@ -323,6 +325,15 @@ export default class Network extends Tool {
       if (this._splitMode) {
         this._$network.css('width', '100%')
       }
+      this._hidingDetail = true
+      const selectedNode = this._requestDataGrid.selectedNode
+      if (selectedNode) {
+        selectedNode.deselect()
+        this._requestDataGrid.selectedNode = null
+      }
+      this._selectedRequest = null
+      this._updateButtons()
+      this._hidingDetail = false
     })
 
     chobitsu.domain('Network').enable()
